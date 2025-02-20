@@ -1,0 +1,20 @@
+{
+    "name": "waxedphp/form",
+    "description": "Form utility - within WaxedPHP environment.",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.3.0",
+    "autoload": {
+        "psr-4": {
+            "Waxedphp\\Form\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JasterStary"
+        }
+    ],
+    "require": {
+      "waxedphp/waxedphp":"^0.3.0"
+    }
+}
