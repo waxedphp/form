@@ -1,21 +1,10 @@
-# Boilerplate
+# Form
 
-BSD license
+Form utility - within WaxedPHP environment.
 
+MIT license
 
-### HTML:
-
-```
-
-<textarea class="waxed-ace"
-  name="code1"
-  style="height:200px;"
-  data-name="payload" >
-
-</textarea>
-
-```
-
+---
 ### PHP:
 
 ```
@@ -35,5 +24,19 @@ $this->waxed->display([
 ], 'template');
 
 ```
+---
 
+### HTML:
+
+```
+
+<textarea class="waxed-ace"
+  name="code1"
+  style="height:200px;"
+  data-name="payload" >
+
+</textarea>
+
+```
+---
 
