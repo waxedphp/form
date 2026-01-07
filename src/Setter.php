@@ -16,6 +16,12 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
    */
   protected array $_allowedOptions = [
   ];
+  
+  /**
+   * @var array<mixed> $commands
+   */
+  private array $commands = [
+  ];
 
   function setValue($value) {
     $this->setup['value'] = $value;
@@ -31,6 +37,14 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
     $this->setup['theme'] = $theme;
     return $this;
   }
+  
+  /**
+	* Focus to input with name
+  */
+  function setFocus(string $name) {
+    $this->commands[] = ['cmd' => 'focus', 'name' => $name];
+    return $this;
+  }
 
   /**
   * value
@@ -38,13 +52,17 @@ class Setter extends \Waxedphp\Waxedphp\Php\Setters\AbstractSetter {
   * @param mixed $value
   * @return array<mixed>
   */
-  public function value(mixed $value): array {
+  public function value(mixed $value = ''): array {
     $a = [];
     $b = $this->getArrayOfAllowedOptions();
     if (!empty($b)) {
       $a['config'] = $b;
     }
     $a['value'] = $value;
+    if (!empty($this->commands)) {
+      $a['commands'] = $this->commands;
+      $this->commands = [];
+    };
     return $a;
   }
 
