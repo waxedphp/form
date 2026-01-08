@@ -65,7 +65,7 @@
           function readElement(keys,val,ddd) {
             if (typeof keys == 'string') {
               keys = keys.split("[");
-              console.log('keys after split', keys);
+              //console.log('keys after split', keys);
             }
 
             var k = keys.shift();
@@ -112,10 +112,10 @@
           }
 
           const arr = $(that.element).serializeArray();
-          console.log(arr);
+          //console.log(arr);
 
           $.each(arr, function() {
-            console.log('THIS', this);
+            //console.log('THIS', this);
             data = readElement(this.name, this.value, data);
             //var val = this.value;
             //var c = this.name.split("[");
@@ -145,10 +145,10 @@
         var c = $('<button class="btn btn-outline-secondary" type="button" >SELECT</button>').appendTo(b);
         var dd = $(that.element).data();
         that.dd.name = that.elemid = that.pluggable.getDomId(c);
-        console.log('xxx', c);
+        //console.log('xxx', c);
         $(c).on('click', function(ev){
           ev.preventDefault();
-          console.log(ev, dd);
+          //console.log(ev, dd);
           var o = {};
           for (var x in dd) o[x] = dd[x];
           o.action = dd.selectaction;
